@@ -1,0 +1,21 @@
+{
+  "name": "jenis",
+  "version": "0.0.1",
+  "description": "Data type checker utility",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "data",
+    "type",
+    "type",
+    "type",
+    "checker",
+    "types",
+    "datatype",
+    "datatypes"
+  ],
+  "author": "Dwi Rizki Irawan <dwi.rizki.irawan@gmail.com>",
+  "license": "MIT"
+}
