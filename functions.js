@@ -1,9 +1,16 @@
 const functions = {
   isString: object => typeof object === "string" || object instanceof String,
-  isArray: object =>
-    object && typeof object === "object" && object.constructor === Array,
-  isObject: object =>
-    object && typeof object === "object" && object.constructor === Object,
+  isArray: object => {
+    if (object && typeof object === "object" && object.constructor === Array)
+      return true;
+    return false;
+  },
+  isObject: object => {
+    if (object && typeof object === "object" && object.constructor === Object)
+      return true;
+    return false;
+  },
+  // eslint-disable-next-line no-restricted-globals
   isNumber: object => typeof object === "number" && isFinite(object),
   isFunction: object => typeof object === "function",
   isNull: object => object === null,
