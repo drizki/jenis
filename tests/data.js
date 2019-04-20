@@ -1,4 +1,4 @@
-const x = () => 1 + 2;
+const fn = () => 1 + 2;
 const promise = new Promise(resolve => setTimeout(resolve, 3000));
 
 const defaultDataTest = [
@@ -7,13 +7,14 @@ const defaultDataTest = [
   [true, 'boolean', false],
   ['hello world', 'string', false],
   [123, 'number', false],
-  [x, 'function', false],
+  [fn, 'function', false],
   [new Date(), 'date', false],
   [new Error('error'), 'error', false],
   [undefined, 'undefined', false],
   [null, 'null', false],
   [promise, 'promise', false],
-  [/a/g, 'regex', false]
+  [/a/g, 'regexp', false],
+  [Symbol(), 'symbol', false]
 ];
 
 const dynamicData = type => {

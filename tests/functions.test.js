@@ -1,4 +1,3 @@
-/* eslint-disable */
 const {
   isString,
   isObject,
@@ -11,7 +10,9 @@ const {
   isError,
   isDate,
   isPromise,
-  isRegExp
+  isRegExp,
+  isSymbol,
+  check
 } = require('../functions');
 const { dynamicData } = require('./data');
 
@@ -26,7 +27,8 @@ const booleanData = dynamicData('boolean');
 const errorData = dynamicData('error');
 const dateData = dynamicData('date');
 const promiseData = dynamicData('promise');
-const regexData = dynamicData('regex');
+const regexData = dynamicData('regexp');
+const symbolData = dynamicData('symbol');
 
 describe.each(stringData)('isString', (valueTest, type, expected) => {
   test(`returns ${expected} when given ${type}`, () => {
@@ -97,5 +99,17 @@ describe.each(promiseData)('isPromise', (valueTest, type, expected) => {
 describe.each(regexData)('isRegExp', (valueTest, type, expected) => {
   test(`returns ${expected} when given ${type}`, () => {
     expect(isRegExp(valueTest)).toBe(expected);
+  });
+});
+
+describe.each(symbolData)('isSymbol', (valueTest, type, expected) => {
+  test(`returns ${expected} when given ${type}`, () => {
+    expect(isSymbol(valueTest)).toBe(expected);
+  });
+});
+
+describe.each(dynamicData())('check', (valueTest, type) => {
+  test(`returns '${type}' when given ${type}`, () => {
+    expect(check(valueTest)).toBe(type);
   });
 });
