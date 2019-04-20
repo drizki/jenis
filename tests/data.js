@@ -1,4 +1,5 @@
 const x = () => 1 + 2;
+const promise = new Promise(resolve => setTimeout(resolve, 3000));
 
 const defaultDataTest = [
   [[1, 2, 3], 'array', false],
@@ -10,7 +11,8 @@ const defaultDataTest = [
   [new Date(), 'date', false],
   [new Error('error'), 'error', false],
   [undefined, 'undefined', false],
-  [null, 'null', false]
+  [null, 'null', false],
+  [promise, 'promise', false]
 ];
 
 const dynamicData = type => {

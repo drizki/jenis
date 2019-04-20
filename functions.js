@@ -22,9 +22,7 @@ const functions = {
     object instanceof Error && typeof object.message !== "undefined",
   isDate: object => object instanceof Date,
   isSymbol: object => typeof object === "symbol",
-  isPromise: object =>
-    Object.prototype.toString.call(object) === "promise" &&
-    object instanceof Promise,
+  isPromise: object => object instanceof Promise,
   check: object => {
     switch (typeof object) {
       case "number":
