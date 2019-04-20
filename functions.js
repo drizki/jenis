@@ -16,8 +16,11 @@ const functions = {
   isNull: object => object === null,
   isUndefined: object => typeof object === "undefined",
   isBoolean: object => typeof object === "boolean",
-  isRegExp: object =>
-    object && typeof object === "object" && object.constructor === RegExp,
+  isRegExp: object => {
+    if (object && typeof object === "object" && object.constructor === RegExp)
+      return true;
+    return false;
+  },
   isError: object =>
     object instanceof Error && typeof object.message !== "undefined",
   isDate: object => object instanceof Date,

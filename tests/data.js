@@ -12,7 +12,8 @@ const defaultDataTest = [
   [new Error('error'), 'error', false],
   [undefined, 'undefined', false],
   [null, 'null', false],
-  [promise, 'promise', false]
+  [promise, 'promise', false],
+  [/a/g, 'regex', false]
 ];
 
 const dynamicData = type => {

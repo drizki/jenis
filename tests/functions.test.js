@@ -10,7 +10,8 @@ const {
   isBoolean,
   isError,
   isDate,
-  isPromise
+  isPromise,
+  isRegExp
 } = require('../functions');
 const { dynamicData } = require('./data');
 
@@ -25,6 +26,7 @@ const booleanData = dynamicData('boolean');
 const errorData = dynamicData('error');
 const dateData = dynamicData('date');
 const promiseData = dynamicData('promise');
+const regexData = dynamicData('regex');
 
 describe.each(stringData)('isString', (valueTest, type, expected) => {
   test(`returns ${expected} when given ${type}`, () => {
@@ -89,5 +91,11 @@ describe.each(dateData)('isDate', (valueTest, type, expected) => {
 describe.each(promiseData)('isPromise', (valueTest, type, expected) => {
   test(`returns ${expected} when given ${type}`, () => {
     expect(isPromise(valueTest)).toBe(expected);
+  });
+});
+
+describe.each(regexData)('isRegExp', (valueTest, type, expected) => {
+  test(`returns ${expected} when given ${type}`, () => {
+    expect(isRegExp(valueTest)).toBe(expected);
   });
 });
